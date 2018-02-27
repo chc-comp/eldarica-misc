@@ -19,6 +19,6 @@
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int) (H Int) (I Int) (J Int))(=> (and (and (and (and (and (= (+ I (- 1)) E) (= (+ J 1) F)) (not (>= A B))) (>= I 0)) (INV1 A B C D I J G H)) (= G H)) (INV1 A B C D E F G H))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int) (H Int) (I Int) (J Int) (K Int) (L Int))(=> (and (and (and (and (and (and (and (= (+ I 1) B) (= (+ J 1) C)) (= (+ K (- 1)) E)) (= (+ L 1) F)) (>= A I)) (>= K 0)) (INV1 A I J D K L G H)) (= G H)) (INV1 A B C D E F G H))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int) (H Int) (I Int) (J Int))(=> (and (and (and (and (and (= (+ I 1) B) (= (+ J 1) C)) (>= A I)) (not (>= E 0))) (INV1 A I J D E F G H)) (= G H)) (INV1 A B C D E F G H))))
-(assert (not (exists ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int) (H Int))(and (and (and (and (not (= A B)) (not (>= C D))) (not (>= E 0))) (INV1 C D A F E B G H)) (= G H)))))
+(assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int) (H Int)) (not (and (and (and (and (not (= A B)) (not (>= C D))) (not (>= E 0))) (INV1 C D A F E B G H)) (= G H)))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int))(=> (and (and (and (= (* (- 1) B) 0) (= (* (- 1) C) 0)) (= (* (- 1) E) 0)) (= A D)) (INV1 A B C D D E A D))))
 (check-sat)

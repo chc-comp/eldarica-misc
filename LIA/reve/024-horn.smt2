@@ -18,7 +18,7 @@
 (declare-fun REC_g_g (Int Int Int Int Int) Bool)
 (declare-fun REC__g (Int Int Int) Bool)
 (declare-fun REC_g_ (Int Int) Bool)
-(assert (not (exists ((A Int) (B Int) (C Int) (D Int) (E Int))(and (and (and (not (= A B)) (= (* (- 1) C) 0)) (REC_g_g D A E C B)) (= D E)))))
+(assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int)) (not (and (and (and (not (= A B)) (= (* (- 1) C) 0)) (REC_g_g D A E C B)) (= D E)))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int))(=> (and (and (and (and (and (= (* (- 1) B) 0) (= (+ C (- 1)) F)) (= (+ C D) G)) (REC__g F G E)) (not (<= C 0))) (<= A 0)) (REC_g_g A B C D E))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int))(=> (and (and (= (* (- 1) B) 0) (<= C 0)) (<= A 0)) (REC_g_g A B C D D))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int) (H Int) (I Int))(=> (and (and (and (and (and (and (= (+ A F) B) (= (+ A (- 1)) G)) (= (+ C (- 1)) H)) (= (+ C D) I)) (REC_g_g G F H I E)) (not (<= C 0))) (not (<= A 0))) (REC_g_g A B C D E))))

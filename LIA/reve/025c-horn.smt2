@@ -18,7 +18,7 @@
 (declare-fun REC_f_f (Int Int Int Int Int) Bool)
 (declare-fun REC__f (Int Int Int) Bool)
 (declare-fun REC_f_ (Int Int) Bool)
-(assert (not (exists ((A Int) (B Int) (C Int) (D Int) (E Int))(and (and (and (not (= A B)) (= (* (- 1) C) 0)) (REC_f_f D A E C B)) (= D E)))))
+(assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int)) (not (and (and (and (not (= A B)) (= (* (- 1) C) 0)) (REC_f_f D A E C B)) (= D E)))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int))(=> (and (and (and (and (and (and (= (* (- 1) B) 0) (= (+ C (- 1)) F)) (= (+ (+ C D) (- 31)) G)) (REC__f F G E)) (>= (+ (+ (+ C D) (- 16)) (- 1)) 0)) (not (<= C 0))) (<= A 0)) (REC_f_f A B C D E))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int) (E Int) (F Int) (G Int))(=> (and (and (and (and (and (and (= (* (- 1) B) 0) (= (+ C (- 1)) F)) (= (+ C D) G)) (REC__f F G E)) (not (>= (+ (+ (+ C D) (- 16)) (- 1)) 0))) (not (<= C 0))) (<= A 0)) (REC_f_f A B C D E))))
 (assert (forall ((A Int) (B Int) (C Int) (D Int))(=> (and (and (= (* (- 1) B) 0) (<= C 0)) (<= A 0)) (REC_f_f A B C D D))))
